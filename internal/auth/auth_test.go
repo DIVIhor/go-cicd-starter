@@ -19,7 +19,7 @@ func TestGetAPIKey(t *testing.T) {
 			name:        "No auth header",
 			headers:     http.Header{"Auth": []string{key}},
 			expectedKey: "",
-			expectedErr: false,
+			expectedErr: true,
 		},
 		{
 			name:        "No bearer",
