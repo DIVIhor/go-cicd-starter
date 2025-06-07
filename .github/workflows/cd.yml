@@ -20,7 +20,7 @@ jobs:
         with:
           go-version: "1.23.0"
 
-      - name: Build
+      - name: Build a Binary
         run: ./scripts/buildprod.sh
 
       - name: Set up Goose
@@ -37,7 +37,7 @@ jobs:
       - name: Use gcloud CLI
         run: gcloud info
 
-      - name: Build and Push Image
+      - name: Build and Push an Image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-462110/notely-ar-repo/notely:latest .
 
       - name: Run Migrations
